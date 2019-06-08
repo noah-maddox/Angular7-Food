@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <!--recipeEl is the single recipe element that we are passing as a value
+     on the right side of the = to the bindable recipe property [recipe]
+    the [recipe] property here is binding the value to the recipe besidethe @Input tag in the
+    recipeitem component. THIS ALLOWS US TO SUCCESSFULLY PASS DOWN THE DATA IN THE RECIPELIST COMPONENT TO
+    THE RECIPEITEM COMPONENT THROUGH THE @INPUT TAG-->
+    <app-recipeitem
+    *ngFor="let recipeEl of recipes; let i = index"
+    [recipe]="recipeEl"
+    [index]="i"></app-recipeitem>
+  </div>
+</div>
